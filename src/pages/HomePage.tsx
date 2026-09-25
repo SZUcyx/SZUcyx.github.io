@@ -67,7 +67,7 @@ export function HomePage() {
             <div className="hero-stats">
               <div><strong>0.023 mm</strong><span>结构光扫描球心距精度</span></div>
               <div><strong>~2M</strong><span>城市全景 RGB-D 帧</span></div>
-              <div><strong>#3</strong><span>CVPR 2025 Workshop 竞赛全球第三</span></div>
+              <div><strong>NeurIPS 2026</strong><span>第一作者论文 · 会议接收</span></div>
             </div>
           </div>
           <div className="hero-scene-wrap">
