@@ -11,7 +11,7 @@ export const site = {
   resume: './assets/Chen-Yunxiao-Resume.pdf',
 
   aboutZh:
-    '具备测绘与计算机视觉交叉背景，研究方向聚焦三维视觉、3D Gaussian Splatting（3DGS）与空间智能。曾任其域创新科技有限公司三维重建算法实习生，参与小物体重建后处理、结构光扫描、3DGS 碰撞仿真及 3D 打印切片等模块研发，具备从算法验证到工程实现的完整项目经验。以第一作者身份投稿 NeurIPS 2026（在审），获 CVPR 2025 Workshop Building3D Competition 全球第 3 名。',
+    '具备测绘与计算机视觉交叉背景，研究方向聚焦三维视觉、3D Gaussian Splatting（3DGS）与空间智能。曾任其域创新科技有限公司三维重建算法实习生，参与小物体重建后处理、结构光扫描、3DGS 碰撞仿真及 3D 打印切片等模块研发，具备从算法验证到工程实现的完整项目经验。第一作者论文 PanoHK360 被 NeurIPS 2026 会议接收，获 CVPR 2025 Workshop Building3D Competition 全球第 3 名。',
 
   intent: {
     role: '三维重建算法工程师（3D 视觉 / 测绘 / 空间智能方向）',
@@ -86,7 +86,7 @@ export const site = {
   research: [
     {
       title: 'PanoHK360: A Large-Scale 8K Urban Panoramic Dataset and Benchmark for Depth Estimation',
-      meta: '**第一作者** · **NeurIPS 2026** 在审（CCF A 类）· 已完成 rebuttal，录用结果 2026.09.24 公布',
+      meta: '**第一作者** · **NeurIPS 2026 会议接收** · CCF A 类',
     },
     {
       title: 'Building3D Competition',

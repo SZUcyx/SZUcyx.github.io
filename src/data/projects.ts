@@ -172,7 +172,7 @@ export const projects: Project[] = [
     title: 'PanoHK360',
     subtitle: '全景影像 × LiDAR 跨模态配准与 8K 度量深度',
     summary:
-      'A city-scale panorama–LiDAR registration and dense metric-depth pipeline behind a 4.72 TB, ~2M-frame 8K urban RGB-D dataset — the foundation of my first-author NeurIPS 2026 submission.',
+      'A city-scale panorama–LiDAR registration and dense metric-depth pipeline behind a 4.72 TB, ~2M-frame 8K urban RGB-D dataset — presented in my first-author paper accepted at NeurIPS 2026.',
     year: '2026',
     featured: true,
     tags: ['LiDAR', 'Panorama', 'ERP', 'HPR', 'Depth Estimation'],
@@ -186,7 +186,7 @@ export const projects: Project[] = [
     detailCover: './assets/images/panohk360-depth-normal-details.png',
     overview: [
       'Depth estimation models are only as good as the data they learn from, and large-scale, metrically accurate outdoor RGB-D data is scarce — especially for **360° panoramas**, where existing datasets are small or synthetic.',
-      'PanoHK360 addresses that gap: a **city-scale, real-world 8K panoramic RGB-D dataset** built by fusing vehicle-mounted panoramas with airborne LiDAR across Hong Kong. This work is the foundation of my **first-author NeurIPS 2026 submission** and required solving both a cross-modal geometry problem and a data-engineering problem at the terabyte scale.',
+      'PanoHK360 addresses that gap: a **city-scale, real-world 8K panoramic RGB-D dataset** built by fusing vehicle-mounted panoramas with airborne LiDAR across Hong Kong. This work underpins my **first-author paper accepted at NeurIPS 2026** and required solving both a cross-modal geometry problem and a data-engineering problem at the terabyte scale.',
     ],
     problem:
       'City-scale panoramas and airborne LiDAR live in different modalities and coordinate frames. Fusing them into geometrically aligned, dense metric depth at 8K resolution — across millions of frames — is both a precision and a scale problem.',
@@ -205,7 +205,7 @@ export const projects: Project[] = [
     results: [
       'Built a **~2M-frame**, **4.72 TB** panoramic RGB-D dataset at **8K (8000×4000)** metric depth.',
       'Released a **22,751-frame** mini benchmark with geographically isolated splits for fair depth-estimation evaluation.',
-      'Serves as the dataset and benchmark behind a **first-author NeurIPS 2026** submission (CCF A, under review).',
+      'Presented in a **first-author paper accepted at NeurIPS 2026** (CCF A).',
     ],
     technicalNotes: [
       'Best visual: RGB / LiDAR projection / sparse depth / dense depth comparison slider.',
