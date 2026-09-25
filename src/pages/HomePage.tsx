@@ -5,6 +5,7 @@ import { SectionHeading } from '../components/SectionHeading'
 import { VisitCounter } from '../components/VisitCounter'
 import { featuredProjects, projects } from '../data/projects'
 import { site } from '../data/site'
+import { useScrollReveal } from '../hooks/useScrollReveal'
 import { handleAnchorClick } from '../utils/scroll'
 import { renderBold } from '../utils/richText'
 import { trackAction } from '../../analytics/tracker/tracker'
@@ -15,6 +16,7 @@ const GaussianViewer = lazy(() =>
 )
 
 export function HomePage() {
+  const mainRef = useScrollReveal()
   const analyticsAdminUrl =
     import.meta.env.VITE_ANALYTICS_ADMIN_URL ||
     (import.meta.env.PROD
@@ -24,7 +26,7 @@ export function HomePage() {
   return (
     <>
       <Header />
-      <main>
+      <main ref={mainRef}>
         <section className="cover" id="top">
           <div className="cover-inner container">
             <p className="cover-hello">Hello! <span aria-hidden>👋</span></p>
