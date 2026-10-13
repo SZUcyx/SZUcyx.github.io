@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useLayoutEffect } from 'react'
 import { Route, Routes, useLocation } from 'react-router-dom'
 import { HomePage } from './pages/HomePage'
 import { ProjectPage } from './pages/ProjectPage'
@@ -11,6 +11,13 @@ export default function App() {
     (import.meta.env.PROD
       ? 'https://portfolio-analytics.szuchenyunxiao.workers.dev/api/collect'
       : '')
+
+  useLayoutEffect(() => {
+    const targetId = (location.state as { scrollTo?: string } | null)?.scrollTo
+    const target = targetId ? document.getElementById(targetId) : null
+    if (target) target.scrollIntoView({ behavior: 'instant', block: 'start' })
+    else window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+  }, [location.key, location.pathname, location.state])
 
   useEffect(() => {
     if (analyticsEndpoint) initAnalytics({ endpoint: analyticsEndpoint })

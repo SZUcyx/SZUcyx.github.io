@@ -6,7 +6,8 @@
 export function scrollToId(id: string) {
   const el = document.getElementById(id)
   if (!el) return
-  el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  el.scrollIntoView({ behavior: reducedMotion ? 'instant' : 'smooth', block: 'start' })
 }
 
 /** 生成一个阻止默认行为并平滑滚动的点击处理器 */

@@ -2,6 +2,7 @@ import { Suspense, lazy } from 'react'
 import { Header } from '../components/Header'
 import { ProjectCard } from '../components/ProjectCard'
 import { SectionHeading } from '../components/SectionHeading'
+import { SceneBoundary } from '../components/SceneBoundary'
 import { VisitCounter } from '../components/VisitCounter'
 import { featuredProjects, projects } from '../data/projects'
 import { site } from '../data/site'
@@ -73,9 +74,11 @@ export function HomePage() {
             </div>
           </div>
           <div className="hero-scene-wrap">
-            <Suspense fallback={<div className="gaussian-viewer-overlay"><span>Loading 3DGS…</span></div>}>
-              <GaussianViewer src="./assets/models/berries.ksplat" />
-            </Suspense>
+            <SceneBoundary>
+              <Suspense fallback={<div className="gaussian-viewer-overlay"><span>Loading 3DGS…</span></div>}>
+                <GaussianViewer src="./assets/models/berries.ksplat" />
+              </Suspense>
+            </SceneBoundary>
             <div className="scene-caption">
               <span>3D Gaussian Splatting · berries</span>
               <span>drag · rotate · zoom</span>

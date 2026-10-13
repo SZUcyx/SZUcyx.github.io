@@ -1,5 +1,6 @@
 import { Suspense, lazy } from 'react'
 import type { DemoType } from '../types/project'
+import { SceneBoundary } from '../components/SceneBoundary'
 
 // 三种查看器都体积较大，全部懒加载，只有真正用到时才拉取。
 const GaussianViewer = lazy(() =>
@@ -32,12 +33,14 @@ export function ModelViewer({ demoType, src }: Props) {
   )
 
   return (
-    <Suspense fallback={fallback}>
-      {demoType === 'gaussian' && <GaussianViewer src={src} />}
-      {demoType === 'pointcloud' && <PointCloudViewer src={src} />}
-      {(demoType === 'mesh' || demoType === 'building') && (
-        <MeshViewer src={src} wireframe={demoType === 'building'} />
-      )}
-    </Suspense>
+    <SceneBoundary key={`${demoType}:${src}`}>
+      <Suspense fallback={fallback}>
+        {demoType === 'gaussian' && <GaussianViewer src={src} />}
+        {demoType === 'pointcloud' && <PointCloudViewer src={src} />}
+        {(demoType === 'mesh' || demoType === 'building') && (
+          <MeshViewer src={src} wireframe={demoType === 'building'} />
+        )}
+      </Suspense>
+    </SceneBoundary>
   )
 }

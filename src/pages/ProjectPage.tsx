@@ -1,5 +1,7 @@
 import { Link, useParams } from 'react-router-dom'
 import { Header } from '../components/Header'
+import { ImagePreview } from '../components/ImagePreview'
+import { SceneBoundary } from '../components/SceneBoundary'
 import { VisitCounter } from '../components/VisitCounter'
 import { projects } from '../data/projects'
 import { MiniScene } from '../three/MiniScene'
@@ -27,7 +29,7 @@ export function ProjectPage() {
     <>
       <Header />
       <main className="project-page container">
-        <Link className="back-link" to="/">← Back to selected work</Link>
+        <Link className="back-link" to="/" state={{ scrollTo: 'work' }}>← Back to selected work</Link>
         <header className="project-hero">
           <div>
             <div className="project-meta"><span>{project.index}</span><span>{project.year}</span></div>
@@ -36,9 +38,9 @@ export function ProjectPage() {
             <p className="project-page-summary">{project.summary}</p>
             <div className="tag-row">{project.tags.map((tag) => <span className="tag" key={tag}>{tag}</span>)}</div>
           </div>
-          <div className="project-demo-large">
+          <div className={`project-demo-large${project.detailCover ? ' project-demo-large--image' : ''}`}>
             {project.detailCover ? (
-              <img
+              <ImagePreview
                 className="project-detail-cover"
                 src={project.detailCover}
                 alt={`${project.title} panorama, depth, normal and detail results`}
@@ -47,7 +49,7 @@ export function ProjectPage() {
               <ModelViewer demoType={project.demoType} src={project.model} />
             ) : (
               <>
-                <MiniScene variant={project.demoType} />
+                <SceneBoundary><MiniScene variant={project.demoType} /></SceneBoundary>
                 <span className="placeholder-note">Procedural placeholder · replace with your real/public asset</span>
               </>
             )}
@@ -67,7 +69,7 @@ export function ProjectPage() {
                 {item.type === 'video' ? (
                   <video src={item.src} muted loop autoPlay playsInline controls />
                 ) : (
-                  <img src={item.src} alt={item.caption ?? project.title} loading="lazy" />
+                  <ImagePreview src={item.src} alt={item.caption ?? project.title} loading="lazy" />
                 )}
                 {item.caption && <figcaption>{item.caption}</figcaption>}
               </figure>

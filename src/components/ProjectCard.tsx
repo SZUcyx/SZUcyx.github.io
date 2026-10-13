@@ -2,11 +2,12 @@ import { Link } from 'react-router-dom'
 import type { Project } from '../types/project'
 import { MiniScene } from '../three/MiniScene'
 import { ModelViewer } from '../three/ModelViewer'
+import { SceneBoundary } from './SceneBoundary'
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
     <article className="project-card">
-      <div className="project-visual" aria-label={`${project.title} project preview`}>
+      <div className={`project-visual${project.cover ? ' project-visual--image' : ''}`} aria-label={`${project.title} project preview`}>
         {project.cover ? (
           <img
             className="project-cover"
@@ -17,7 +18,7 @@ export function ProjectCard({ project }: { project: Project }) {
         ) : project.model ? (
           <ModelViewer demoType={project.demoType} src={project.model} />
         ) : (
-          <MiniScene variant={project.demoType} />
+          <SceneBoundary><MiniScene variant={project.demoType} /></SceneBoundary>
         )}
         {!project.cover && <span className="demo-badge">Interactive preview</span>}
       </div>
