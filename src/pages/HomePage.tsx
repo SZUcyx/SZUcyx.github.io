@@ -59,16 +59,16 @@ export function HomePage() {
             <div className="status-line"><span /> Open to 3D reconstruction / vision roles</div>
             <p className="hero-kicker">{site.nameZh} · {site.name}</p>
             <h1>
-              Reconstructing the world into measurable <span>3D geometry.</span>
+              From images and point clouds to <span>3D geometry.</span>
             </h1>
             <p className="hero-intro">{site.intro}</p>
-            <p className="hero-intro-zh">{site.introZh}</p>
+            <p className="hero-intro-zh">从城市全景 RGB-D 数据构建，到结构光扫描、Mesh 后处理与 3DGS 实体打印。</p>
             <div className="hero-actions">
               <a className="button primary" href="#work" onClick={handleAnchorClick('work')}>Explore work</a>
               <a className="button secondary" href={site.resume} onClick={() => trackAction('resume_download')}>Resume ↗</a>
             </div>
             <div className="hero-stats">
-              <div><strong>0.023 mm</strong><span>结构光扫描球心距精度</span></div>
+              <div><strong>0.023 mm</strong><span>标准球球心距误差</span></div>
               <div><strong>~2M</strong><span>城市全景 RGB-D 帧</span></div>
               <div><strong>NeurIPS 2026</strong><span>第一作者论文 · 会议接收</span></div>
             </div>
@@ -110,7 +110,7 @@ export function HomePage() {
           <div className="container">
             <SectionHeading
               eyebrow="Experience"
-              title="从算法验证到工程交付的完整实习与项目经历。"
+              title="实习与项目中的算法工作。"
             />
             <div className="timeline">
               {site.experience.map((item) => (
@@ -136,7 +136,7 @@ export function HomePage() {
           <div className="container">
             <SectionHeading
               eyebrow="Research & recognition"
-              title="Research backed by large-scale 3D data and reconstruction tasks."
+              title="Research and competition results."
             />
             <div className="research-list">
               {site.research.map((item, index) => (
@@ -155,7 +155,7 @@ export function HomePage() {
         </section>
 
         <section className="about-section container" id="about">
-          <SectionHeading eyebrow="About" title="3D vision grounded in surveying, geometry and engineering delivery." />
+          <SectionHeading eyebrow="About" title="Surveying, geometry and computer vision." />
           <div className="about-grid">
             <p className="about-lead">{site.aboutZh}</p>
             <div className="capabilities">
@@ -181,7 +181,7 @@ export function HomePage() {
 
         <section className="skills-section" id="skills">
           <div className="container">
-            <SectionHeading eyebrow="Skills" title="Toolchain across geometry, learning and engineering." />
+            <SectionHeading eyebrow="Skills" title="Tools I use to build and evaluate 3D pipelines." />
             <div className="skills-grid">
               {site.skills.map((skill) => (
                 <div className="skill-item" key={skill.label}>
@@ -211,8 +211,8 @@ export function HomePage() {
           href={analyticsAdminUrl}
           target="_blank"
           rel="noreferrer"
-          aria-label="Open local analytics"
-          title="Open local analytics"
+          aria-label="Open analytics"
+          title="Open analytics"
         >
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
             <path d="M5 19V11M12 19V5M19 19v-8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />

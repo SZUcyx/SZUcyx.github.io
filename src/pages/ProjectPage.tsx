@@ -50,7 +50,7 @@ export function ProjectPage() {
             ) : (
               <>
                 <SceneBoundary><MiniScene variant={project.demoType} /></SceneBoundary>
-                <span className="placeholder-note">Procedural placeholder · replace with your real/public asset</span>
+                <span className="placeholder-note">Illustrative preview</span>
               </>
             )}
           </div>
@@ -77,20 +77,6 @@ export function ProjectPage() {
           </section>
         )}
 
-        {project.specs && (
-          <section className="spec-section">
-            {project.specs.title && <h2 className="spec-title">{project.specs.title}</h2>}
-            <div className="spec-table">
-              {project.specs.rows.map((row) => (
-                <div className="spec-row" key={row.label}>
-                  <div className="spec-label">{row.label}</div>
-                  <div className="spec-value">{row.value}</div>
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
-
         <section className="project-detail-grid">
           {(() => {
             let n = 0
@@ -114,6 +100,15 @@ export function ProjectPage() {
                   <ul>{project.contribution.map((item) => <li key={item}>{renderBold(item)}</li>)}</ul>
                 </div>
 
+                {project.results && (
+                  <>
+                    <div className="detail-title"><span>{num()}</span><h2>Results &amp; impact</h2></div>
+                    <div className="detail-copy">
+                      <ul>{project.results.map((item) => <li key={item}>{renderBold(item)}</li>)}</ul>
+                    </div>
+                  </>
+                )}
+
                 <div className="detail-title"><span>{num()}</span><h2>Pipeline</h2></div>
                 <div className="detail-copy pipeline">
                   {project.pipeline.map((step, index) => (
@@ -133,19 +128,24 @@ export function ProjectPage() {
                     </div>
                   </>
                 )}
-
-                {project.results && (
-                  <>
-                    <div className="detail-title"><span>{num()}</span><h2>Results &amp; impact</h2></div>
-                    <div className="detail-copy">
-                      <ul>{project.results.map((item) => <li key={item}>{renderBold(item)}</li>)}</ul>
-                    </div>
-                  </>
-                )}
               </>
             )
           })()}
         </section>
+
+        {project.specs && (
+          <section className="spec-section">
+            {project.specs.title && <h2 className="spec-title">{project.specs.title}</h2>}
+            <div className="spec-table">
+              {project.specs.rows.map((row) => (
+                <div className="spec-row" key={row.label}>
+                  <div className="spec-label">{row.label}</div>
+                  <div className="spec-value">{row.value}</div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
       </main>
       <footer className="footer container">
         <span>© 2026 Chen Yunxiao</span>

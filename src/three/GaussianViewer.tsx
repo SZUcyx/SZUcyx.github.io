@@ -167,7 +167,7 @@ export function GaussianViewer({ src }: Props) {
       )}
       {status === 'error' && (
         <div className="gaussian-viewer-overlay gaussian-viewer-overlay--error">
-          <span>模型加载失败，请检查文件路径与格式（.ply / .splat / .ksplat）</span>
+          <span>3D preview could not be loaded.<br />Please refresh or continue browsing the project.</span>
         </div>
       )}
     </div>
