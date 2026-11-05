@@ -8,7 +8,7 @@ export const site = {
   phone: '158-5568-2789',
   email: '1370214582@qq.com',
   github: 'https://github.com/SZUcyx',
-  resume: './assets/Chen-Yunxiao-Resume.pdf',
+  resume: './assets/Chen-Yunxiao-Resume.pdf?v=1aca05ab1d90',
 
   aboutZh:
     '具备测绘与计算机视觉交叉背景，关注三维数据的配准、几何表达与精度验证。在其域创新科技的实习中，参与结构光扫描数据处理、Mesh 后处理、3DGS 碰撞仿真与实体打印；在研究中，围绕城市全景影像与激光点云，开展跨模态配准、稠密深度图生成与基准构建。',
